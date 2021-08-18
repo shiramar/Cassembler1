@@ -5,7 +5,7 @@
 #include "assembler.h"
 #include "struct.h"
 
-/*In this file we creat extern vars for using in all the program */
+/*We will create external variables to use throughout the program*/
 
 extern int ic, dc;
 extern int error;
