@@ -11,37 +11,37 @@
 
 /*data*/
 
-#define MAX_INPUT 81 /*maximum chars per line*/
-#define MAX_LABEL 32 /*maximum chars per label*/
-#define DEFAULT_IC 100 /*memory start*/
+#define MAX_INPUT 81 /*max line's chars*/
+#define MAX_LABEL 32 /*max label's chars*/
+#define DEFAULT_IC 100 /*initial ic*/
 #define EMPTY_ERROR 0
 #define ERROR 1
-#define NO_MATCH -1 /*no match for comparison*/
-#define MAX_LINES 500 /*limit for data tables*/
+#define NO_MATCH -1 /*no match in comparison*/
+#define MAX_LINES 500 /*max line in data tables*/
 #define UNKNOWN_FUNCT 0
 #define NUMBER_OF_COMMANDS 27
-#define MIN_REGISTER_NUM 0 /*registers start*/
-#define MAX_REGISTER_NUM 31 /*registers end*/
+#define MIN_REGISTER_NUM 0 /*first register*/
+#define MAX_REGISTER_NUM 31 /*latest register*/
 
 
-/*Enums*/
+/*Enums for guidances*/
 
 enum guidance {ENTRY, DB = 1, DH = 2, ASCIZ, DW = 4, EXTERN, UNKNOWN_TYPE};
 
-/*commands Enum*/
+/*Enum for commands*/
 enum commands { ADD, SUB, AND, OR, NOR, MOVE, MVHI, MVLO, ADDI, SUBI, ANDI, ORI, NORI, BNE, BEQ, BLT, BGT, LB, SB, LW, SW, LH, SH, JMP, LA, CALL, STOP , UNKNOWN_COMMAND };
 
 
-/*Enum of file types*/
+/*Enum of out file types*/
 enum filetype {FILE_OBJECT, FILE_ENTRY, FILE_EXTERN };
 
-/* Addressing methods ordered by their code */
+/* Methods for the operands */
 enum methods {METHOD_REGISTER, METHOD_LABEL, METHOD_IMMEDIATE };
 
 /*for colon check*/
 enum { NO_COLO, COLON };
 
-/* Errors */
+/* Errors types */
 enum errors {
     INVALID_SYNTAX = 1, INVALID_LABEL_LINE, MISSING_SYNTAX, NO_PARAMETER_AVAILABLE, GUIDANCE_INVALID_NUM_PARAMS, DATA_EXPECTED_NUM,
     DATA_EXPECTED_COMMA_AFTER_NUM, DATA_COMMAS_IN_A_ROW, DATA_UNEXPECTED_COMMA, STRING_TOO_MANY_OPERANDS, STRING_OPERAND_NOT_VALID,
